@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   loginWithProvider(provider: string) {
     this.authService.loginWithProvider(provider)
-      .do((auth) => console.log('logged in with', provider, auth))
+      .filter((auth) => auth.isLoggedIn())
       .do(() => this.router.navigate(['/']))
       .subscribe()
   }
