@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MomentModule } from 'angular2-moment';
 import { ActionComponent } from './action';
 import { TableComponent } from './table';
+import { IsEmptyPipe } from './pipes';
 
 @NgModule({
     imports: [
@@ -11,11 +12,13 @@ import { TableComponent } from './table';
     ],
     exports: [
         TableComponent,
-        ActionComponent
+        ActionComponent,
+        IsEmptyPipe
     ],
     declarations: [
         TableComponent,
-        ActionComponent
+        ActionComponent,
+        IsEmptyPipe
     ],
     providers: []
 })
