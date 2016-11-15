@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
-
+import { AppReadyEvent } from './app-ready.event';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [
+    AppReadyEvent
+  ]
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(appReadyEvent: AppReadyEvent) {
+    appReadyEvent.trigger()
+  }
 }
