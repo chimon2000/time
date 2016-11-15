@@ -10,16 +10,10 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
-
-    let user = {
-      email: 'user@times.io',
-      password: 'Passw0rd'
-    }
-  }
+  ngOnInit() { }
 
   login({email, password}) {
-    this.authService.login({email, password})
+    this.authService.login({ email, password })
       .do(() => this.router.navigate(['/']))
       .subscribe()
   }
