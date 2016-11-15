@@ -17,6 +17,7 @@ export class TimeListComponent implements OnInit {
   @Input() times: Observable<Time[]>
   @Output() createTime = new EventEmitter()
   @Input() showCreate = false
+
   filters = [
     { name: 'all', description: "All", action: FilterAllAction },
     { name: 'today', description: "Today", action: FilterTodayAction },
@@ -24,7 +25,8 @@ export class TimeListComponent implements OnInit {
   ]
   selectedFilter = this.filters[0]
 
-  private model;
+  private model: Observable<any>
+  private loaded = false
 
   tableOptions = {
     headers: [
@@ -48,6 +50,8 @@ export class TimeListComponent implements OnInit {
           times: times.filter(filter)
         }
       })
+
+    this.model.do(() => this.loaded = true)
   }
 
   ngOnInit() {
