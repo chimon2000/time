@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let header of tableOptions.headers">{{header.name}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data" [class.selected]="item.selected" [class.selectable]="tableOptions.selectionMode !== 'none'"
+      (click)="onSelectRow(item)">
+      <td [attr.data-label]="header.key" *ngFor="let header of tableOptions.headers" [ngSwitch]="header.type">
+        <span *ngSwitchCase="'Date'">{{item[header.key] | amDateFormat:'LL'}}</span>
+        <span *ngSwitchDefault>{{item[header.key]}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+  <div>
+    <md-input name="date" placeholder="Date" [(ngModel)]="time.date" required type="date"></md-input>
+  </div>
+  <div>
+    <md-input #hours name="hours" placeholder="Hours" [(ngModel)]="time.hours" required type="number">
+    </md-input>
+  </div>
+  <div>
+    <md-input #what name="what" placeholder="What?" [(ngModel)]="time.what" required></md-input>
+  </div>
+  <button md-button color="primary" type="submit" [disabled]="!form.form.valid">
+    Log Time
+  </button>
+</form>

@@ -1,0 +1,8 @@
+.secondary {
+    opacity: .3;
+    font-size: .8em;
+}
+
+app-time-form {
+    margin-bottom: 10px;
+}

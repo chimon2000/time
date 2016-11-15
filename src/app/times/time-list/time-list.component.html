@@ -1,0 +1,5 @@
+<app-time-form (createTime)="onCreateTime($event)" *ngIf="showCreate"></app-time-form>
+<ng2-select [placeholder]="'Choose your filter'" [displayBy]="'description'" [identifyBy]="'name'"
+  [options]="filters" (onChange)="onUpdateFilter($event.action)" [(ngModel)]="selectedFilter">
+</ng2-select>
+<app-table [tableOptions]="tableOptions" [data]="(model | async)?.times"></app-table>
