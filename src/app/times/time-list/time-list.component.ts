@@ -60,9 +60,9 @@ export class TimeListComponent implements OnInit {
     this.timeForm.reset()
   }
 
-  onUpdateFilter(action) {  
-    console.log('dispatching action', name)
+  onFilterChanged(selected) {
+    let action = this.filters[selected].action
+
     this.store.dispatch(new action())
   }
-
 }

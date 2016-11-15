@@ -1,5 +1,9 @@
 <app-time-form (createTime)="onCreateTime($event)" *ngIf="showCreate"></app-time-form>
-<ng2-select [placeholder]="'Choose your filter'" [displayBy]="'description'" [identifyBy]="'name'"
-  [options]="filters" (onChange)="onUpdateFilter($event.action)" [(ngModel)]="selectedFilter">
-</ng2-select>
-<app-table [tableOptions]="tableOptions" [data]="(model | async)?.times"></app-table>
+<paper-dropdown-menu label="Date filter" (iron-select)="onFilterChanged($event.target.selected)">
+  <paper-listbox class="dropdown-content" selected="0">
+    <paper-item *ngFor="let filter of filters">{{filter.description}}</paper-item>
+  </paper-listbox>
+</paper-dropdown-menu>
+<app-table *ngIf="model && !((model | async)?.times | isEmpty)" [tableOptions]="tableOptions"
+  [data]="(model | async)?.times"></app-table>
+<div *ngIf="(model | async)?.times | isEmpty">No Results</div>
