@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { PolymerElement } from '@vaadin/angular2-polymer';
 
 import { AngularFireModule } from 'angularfire2';
 import { TextMaskModule } from 'angular2-text-mask';
@@ -24,7 +25,6 @@ import reducer from './app.state'
 import { LoginComponent } from './login/login.component';
 import { AuthGuard, AuthService } from './shared/security';
 import { SharedModule } from './shared';
-import { Ng2SelectModule } from 'ng2-material-select';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDUVQ3BAb5wk0QPjtFAVVMuG_JRWJU5xNE",
@@ -36,6 +36,9 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [
+    PolymerElement('paper-dropdown-menu'),
+    PolymerElement('paper-item'),
+    PolymerElement('paper-listbox'),
     AppComponent,
     TimeFormComponent,
     TimeListComponent,
@@ -56,7 +59,6 @@ const firebaseConfig = {
     TextMaskModule,
     MomentModule,
     MdlModule,
-    Ng2SelectModule,
     //App
     AppRouting,
     TimesRoutes,
@@ -69,6 +71,7 @@ const firebaseConfig = {
     AuthService,
     AuthGuard
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

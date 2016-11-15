@@ -1,0 +1,23 @@
+{
+  "name": "time",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Ryan Edge <redge@diligent.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/chimon2000/time",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.4.1",
+    "paper-listbox": "PolymerElements/paper-listbox#^1.1.2",
+    "paper-item": "PolymerElements/paper-item#^1.2.1"
+  }
+}
