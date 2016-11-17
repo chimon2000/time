@@ -41,6 +41,7 @@ const firebaseConfig = {
     PolymerElement('app-toolbar'),
     PolymerElement('paper-dropdown-menu'),
     PolymerElement('paper-item'),
+    PolymerElement('paper-button'),
     PolymerElement('paper-listbox'),
     PolymerElement('paper-input'),
     PolymerElement('paper-toast'),
