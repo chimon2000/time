@@ -21,6 +21,7 @@
     "paper-item": "PolymerElements/paper-item#^1.2.1",
     "paper-input": "polymerelements/paper-input#^1.1.21",
     "paper-toast": "polymerelements/paper-toast#^1.3.0",
-    "app-layout": "PolymerElements/app-layout#^0.10.6"
+    "app-layout": "PolymerElements/app-layout#^0.10.6",
+    "paper-button": "polymerelements/paper-button#^1.0.14"
   }
 }
