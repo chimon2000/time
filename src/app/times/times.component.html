@@ -1,13 +1,15 @@
-<!--<app-time-form></app-time-form>
-<app-time-list></app-time-list>-->
-<md-toolbar color="primary">
-  Times
-  <span class="app-toolbar-filler"></span>
-  <button md-button (click)="onSignOut()">Sign Out</button>
-</md-toolbar>
-<div class="app-content">
-  <app-time-list [showCreate]="showCreate"></app-time-list>
-</div>
+<app-header-layout has-scrolling-region>
+  <app-header fixed>
+    <app-toolbar>
+      <div title spacer>Times</div>
+      <span class="app-toolbar-filler"></span>
+      <button md-button (click)="onSignOut()">Sign Out</button>
+    </app-toolbar>
+  </app-header>
+  <div class="main">
+    <app-time-list [showCreate]="showCreate"></app-time-list>
+  </div>
+</app-header-layout>
 <app-action>
   <button md-fab (click)="toggleCreate()">
       <md-icon class="md-24">{{showCreate ? 'clear' : 'add'}}</md-icon>
