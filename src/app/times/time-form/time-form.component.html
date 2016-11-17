@@ -1,15 +1,15 @@
-<form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+<form (ngSubmit)="onSubmit(time)" #form="ngForm">
   <div>
-    <md-input name="date" placeholder="Date" [(ngModel)]="time.date" required type="date"></md-input>
+    <paper-input name="date" label="Date *" type="date" [(ngModel)]="time.date" ngDefaultControl
+      required></paper-input>
   </div>
   <div>
-    <md-input #hours name="hours" placeholder="Hours" [(ngModel)]="time.hours" required type="number">
-    </md-input>
+    <paper-input #hours name="hours" label="Hours *" required type="number" [(ngModel)]="time.hours"
+      ngDefaultControl></paper-input>
   </div>
   <div>
-    <md-input #what name="what" placeholder="What?" [(ngModel)]="time.what" required></md-input>
+    <paper-input #what name="what" label="What? *" required [(ngModel)]="time.what" ngDefaultControl></paper-input>
   </div>
-  <button md-button color="primary" type="submit" [disabled]="!form.form.valid">
-    Log Time
-  </button>
+  <button #submit style="display: none"></button>
+  <paper-button (click)="submit.click()" [disabled]="!form.form.valid">Log Time</paper-button>
 </form>

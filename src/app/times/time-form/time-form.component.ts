@@ -10,7 +10,7 @@ export class TimeFormComponent implements OnInit {
   @Input() time: Time = new Time()
 
   @Output() createTime = new EventEmitter()
-  @ViewChild('hours') hoursInput: MdInput
+  @ViewChild('hours') hoursInput: ElementRef
 
   constructor() { }
 
@@ -23,7 +23,8 @@ export class TimeFormComponent implements OnInit {
 
   reset() {
     this.time = new Time()
-    this.hoursInput.focus()
+
+    this.hoursInput.nativeElement.focus()
   }
 
 }
