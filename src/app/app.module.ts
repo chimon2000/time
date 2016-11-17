@@ -36,13 +36,17 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [
+    PolymerElement('app-header-layout'),
+    PolymerElement('app-header'),
+    PolymerElement('app-toolbar'),
     PolymerElement('paper-dropdown-menu'),
     PolymerElement('paper-item'),
     PolymerElement('paper-listbox'),
+    PolymerElement('paper-input'),
+    PolymerElement('paper-toast'),
     AppComponent,
     TimeFormComponent,
     TimeListComponent,
-    HeaderComponent,
     FooterComponent,
     TimesComponent,
     TimeDetailComponent,
